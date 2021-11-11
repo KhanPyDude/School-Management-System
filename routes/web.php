@@ -13,10 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+require __DIR__ .'/admin/admin.php';
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.index');
 })->name('dashboard');
